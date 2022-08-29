@@ -1,0 +1,50 @@
+.left {
+    background-color: rgb(224, 224, 224);
+
+    .contact-item:hover {
+        background-color: rgb(230, 230, 230);
+    }
+
+    .selected-contact {
+        background-color: rgb(216, 216, 216);
+    }
+}
+
+.Users-List {
+    height: 20vh;
+
+    .searchUserItem {
+        margin: 5px 0;
+    }
+
+    .searchUserItem.selected {
+        margin: 5px 0;
+        background-color: rgb(230, 230, 230);
+    }
+
+    .searchUserItem:hover {
+        cursor: pointer;
+        background-color: rgb(230, 230, 230);
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

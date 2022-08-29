@@ -1,0 +1,33 @@
+<div class="chat-container bg-light d-flex flex-column h-100">
+    <header class="chat-header d-flex align-items-center w-100 px-2">
+        <div class=" flex-grow-1">
+            <h1 >
+                {{otherUser.username}}
+            </h1>
+            gender: {{ otherUser.gender }}, ID: {{ otherUser.id }}
+        </div>
+        <button [routerLink]="['/home','x']" class="btn btn-outline-danger" id="leave-btn">
+            X
+        </button>
+    </header>
+    <hr>
+    <div class="chat-div overflow-auto d-flex flex-column  align-items-start flex-grow-1 p-2" #messagesBox>
+        <div *ngFor="let msg of messages"
+            class="border rounded mb-1 p-2 d-flex flex-column align-self-end bg-primary text-white"
+            [ngClass]="{'align-self-end bg-primary text-white': msg.user.id === myID}" #messagesdiv>
+
+            {{msg.text}}
+            <span class="small align-self-end"> {{msg.user.id === myID? 'you': msg.user.username}} -
+                {{msg.sentDate|date:'h:mm a'}}</span>
+        </div>
+    </div>
+
+    <div class="chat-form-container d-flex justify-content-center">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="w-100 d-flex">
+            <input type="text" name="message" class="flex-grow-1 p-1 rounded" ngModel placeholder="Type a Message">
+            <button class="btn btn-primary">
+                send <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</div>
